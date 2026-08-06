@@ -1,0 +1,15 @@
+So our goal is to create a web server and along the way master the cpp language 
+But before anything, I have 0 idea about how web servers work so lets learn about it first and then start building
+So lets start with the basics 
+What is socket?? Its is software endpoint that allows two programs to send and receive data across a network or the same computer 
+
+now lets read "How does the Internet work?" - MDN
+It gave an introduction to switches, routers, modems and why they are used, isps, difference between internet and web, 
+ip address, domain name, intranet and extranet
+It answers the question - "When I send a message from my laptop to another laptop, what physically happens?"
+
+Read 2 Cloudflare Learning Center:  How does the Internet work? 
+Defined packets and protocols, and learnt why packets and protocols are important
+They also went into the steps of connecting to website that include DNS, TCP, TLS, HTTP request, and HTTP response
+Went into detail in IP,DNS
+Gotta study IPs and DNS tomorrow
