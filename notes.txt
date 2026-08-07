@@ -12,4 +12,6 @@ Read 2 Cloudflare Learning Center:  How does the Internet work?
 Defined packets and protocols, and learnt why packets and protocols are important
 They also went into the steps of connecting to website that include DNS, TCP, TLS, HTTP request, and HTTP response
 Went into detail in IP,DNS
-Gotta study IPs and DNS tomorrow
+Learnt about Ip more, what does a packet contain, ipv4 vs ipv6
+HTTP, HTTP methods, HTTP Requests, HTTP headers, HTTPS reponse,     
+DNS, DNS recursor, root nameserver,TLD nameserver, Authorative nameserver
