@@ -15,3 +15,7 @@ Went into detail in IP,DNS
 Learnt about Ip more, what does a packet contain, ipv4 vs ipv6
 HTTP, HTTP methods, HTTP Requests, HTTP headers, HTTPS reponse,     
 DNS, DNS recursor, root nameserver,TLD nameserver, Authorative nameserver
+
+Read3 
+What is computer port?: ports defination, ICMP, firewall
+MDN Client Server Overview: webserver, method
