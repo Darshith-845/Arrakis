@@ -18,4 +18,11 @@ DNS, DNS recursor, root nameserver,TLD nameserver, Authorative nameserver
 
 Read3 
 What is computer port?: ports defination, ICMP, firewall
-MDN Client Server Overview: webserver, method
+MDN Client Server Overview: webserver, method, static and dynamic sites 
+
+Read 4
+Beej's Guide to Network Programming:sockets, raw socket, steam sockets, datagram sockets, tcp , udp- tftp dhp , tftp works with udp because of layering of 
+protocols which sends ack packet , network theory, data encapsulation,ipv4 ipv6, subnets, port numbers, byte order- bigendian networkbyteorder - littleendian hostbyteorder
+htons etc etc, struct - addrinfo; sockaddr;sockaddr_in;sin_zero;in_addr; sockaddr_storage, inet_pton()- make sure it is greater than zero before using,inet_ntop(), NAT
+jumping from ipv4 to ipv6, System Calls- getaddrinfo() gai_strerror() for errors; freeaddrinfo();socket();bind(); connect();listen();accept(); send(); recv();
+sendto(); receivefrom();close();shutdown();
