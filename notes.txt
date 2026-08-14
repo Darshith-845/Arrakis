@@ -26,3 +26,31 @@ protocols which sends ack packet , network theory, data encapsulation,ipv4 ipv6,
 htons etc etc, struct - addrinfo; sockaddr;sockaddr_in;sin_zero;in_addr; sockaddr_storage, inet_pton()- make sure it is greater than zero before using,inet_ntop(), NAT
 jumping from ipv4 to ipv6, System Calls- getaddrinfo() gai_strerror() for errors; freeaddrinfo();socket();bind(); connect();listen();accept(); send(); recv();
 sendto(); receivefrom();close();shutdown();
+Client-server: Its just the basics, I understand it now 
+Now I am making a tcp echo server to understand this in depth 
+
+So lets start server:
+Firstly include/Socket.hpp contains the Socket class which will be used
+src/Socket.cpp contains the actual implementation
+include/Server.hpp deals with the concept of the server
+src/Server.cpp implements the server behavior
+src/main.cpp keep this short ,like create server, start server;
+CMakeLists.txt Basically takes the source files and turns them into executable 
+And as we know README for documentation but I am using notes.txt
+
+This will be my flow 
+I am stuck
+     ↓
+Think
+     ↓
+Check my notes
+     ↓
+Check Beej for concept
+     ↓
+Check man page for API details
+     ↓
+Compiler/error messages
+     ↓
+Search specific error
+     ↓
+Ask Chatgpt
