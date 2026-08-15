@@ -54,3 +54,10 @@ Compiler/error messages
 Search specific error
      ↓
 Ask Chatgpt
+
+
+Okay lets start with coding part
+I was so indulged in writing socket.hpp, I forgot to update this
+
+Okay I have reached a deadend and I am going to stop today there only for some reason I dont seem 
+to convert const char array into a string and its pissing me off
