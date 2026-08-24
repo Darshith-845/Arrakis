@@ -14,16 +14,16 @@ public:
         int status;
 
         std::cout<<"Creating the socket"<<std::endl;
-        if ((status = getaddrinfo(NULL, port.data(), hints, &res )) != 0){
+        if ((status = ::getaddrinfo(NULL, port.data(), hints, &res )) != 0){
             std::cout<<stderr<<"gai error:\n"<<gai_strerror(status);
             exit(1);
         }
         
-        s = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+        s = ::socket(res->ai_family, res->ai_socktype, res->ai_protocol);
         
     };
     
-    ~Socket();
+    // ::~Socket();
 
     int getaddrinfo(const char *node, 
                     const char *port,

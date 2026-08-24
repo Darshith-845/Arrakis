@@ -1,4 +1,4 @@
-#include <include/Socket.hpp>
+#include "../include/Socket.hpp"
 #include <cstring>
 #include <string>
 
@@ -7,7 +7,7 @@
 int main(){
     int status;
     struct addrinfo hints;
-    struct addrindfo *res;
+    struct addrinfo res;
     
     memset(&hints,0, sizeof(hints));
     hints.ai_family = AF_UNSPEC;
@@ -15,5 +15,5 @@ int main(){
     hints.ai_flags = AI_PASSIVE;
 
     
-    Socket socket(std::string(PORT), hints, res);
+    Socket socket(std::string(PORT), &hints, &res);
 }
