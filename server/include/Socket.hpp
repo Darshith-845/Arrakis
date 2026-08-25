@@ -6,11 +6,11 @@
 
 class Socket{
 private:
-    int fd;
+    int socketfd;
+    struct addrinfo *res;
 
 public:
-    Socket(std::string port,const struct addrinfo *hints, struct addrinfo *res ){
-        int s;
+    Socket(std::string port,const struct addrinfo *hints ){
         int status;
 
         std::cout<<"Creating the socket"<<std::endl;
@@ -19,21 +19,45 @@ public:
             exit(1);
         }
         
-        s = ::socket(res->ai_family, res->ai_socktype, res->ai_protocol);
-        
+        socketfd = ::socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+        if(socketfd == -1){
+            std::cout<<"Creation has been failed\n";
+            std::exit(1);
+        }else{
+            std::cout<<"Creation of socket was a success\n";
+            std::cout<<"This is the socketfd: "<<socketfd<<std::endl;
+        }
+
     };
     
     // ::~Socket();
-
-    int getaddrinfo(const char *node, 
-                    const char *port,
-                    const struct addrinfo *hints,
-                    struct addrinfo **res);
-
-    int socket(int domain, int type, int protocol);
     
-    void bind();
-    void listen();
+    int getSocketfd() const{
+        return socketfd;
+    }
+
+    void bind(){
+        std::cout<<"Binding the socket\n";
+        int bindValue = ::bind(socketfd, res->ai_addr, res->ai_addrlen);
+        if(bindValue<0){
+            std::cout<<"Binding process was a failure\n";
+            std::exit(1);
+        }else{
+            std::cout<<"Binding process was a success\n";
+        }
+    };
+
+
+    void listen(){
+        std::cout<<"Listening is initialized\n";
+        int listenValue = ::listen(socketfd, 5);
+        if(listenValue<0){
+            std::cout<<"Listening was failure\n";
+            std::exit(1);
+        }else{
+            std::cout<<"Listening was sucessfull\n";
+        }
+    };
     void accept();
     void send();
     void receive();

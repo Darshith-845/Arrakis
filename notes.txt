@@ -61,3 +61,33 @@ I was so indulged in writing socket.hpp, I forgot to update this
 
 Okay I have reached a deadend and I am going to stop today there only for some reason I dont seem 
 to convert const char array into a string and its pissing me off
+Ohhh theres this new thing that I got to know so when we use angular brackets then the system looks into only the
+standard libraries so if we want to use the local header files then its better to use double inverted comma
+
+I finally understand the deadend and it was very simple , it was a type mismatch 
+My program was expecting a pointer but I was passing it the object which was causing it the issue
+
+Finally cleared the type issue and now I came accross a linker error 
+/usr/bin/ld: /tmp/ccj8hThT.o: in function `main':
+Socket.cpp:(.text+0xc6): undefined reference to `Socket::~Socket()'
+/usr/bin/ld: /tmp/ccj8hThT.o: in function `Socket::Socket(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, addrinfo const*, addrinfo*)':
+Socket.cpp:(.text._ZN6SocketC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPK8addrinfoPS6_[_ZN6SocketC5ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPK8addrinfoPS6_]+0x75): undefined reference to `Socket::getaddrinfo(char const*, char const*, addrinfo const*, addrinfo**)'
+/usr/bin/ld: Socket.cpp:(.text._ZN6SocketC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPK8addrinfoPS6_[_ZN6SocketC5ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPK8addrinfoPS6_]+0xf4): undefined reference to `Socket::socket(int, int, int)'
+collect2: error: ld returned 1 exit status
+Okay as far as I understand the error is caused because the getaddrinfo and the socketinfo already exists as global namespace
+so instead of defining it, i think I should use them 
+
+I was too confused about how to call getaddrinfo and socket in the linux api but just adding :: it is clear
+Okay so the socket has been created , i have removed the getaddrinfo and socket functions that I was declaring as I was
+innately using the global ones 
+
+Okay so our next task is use to create the bind so that the socket created can be bound to 
+a port which will be used for listening later 
+I have no much idea about how to structure this so I am just going to write the bind inside the hpp
+Or else lets try this 
+Ill create a method to get back the fd 
+I guess I was getting confused from line 85 but now I am clear, I will define the function inside the socket.hpp and then use them in socket.cpp
+
+Okay so now created a bind function, although it used global namespaces that is linux api , but I just made error checking ig 
+I am pretty confused whether I should include connect or now, so for now I will skip that part and try doing the listen , 
+mostly as much as I know the connect is for the client side to make a connection with the server, tcp protocol, something like three way handshake

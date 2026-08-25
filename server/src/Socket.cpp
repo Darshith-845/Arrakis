@@ -15,5 +15,9 @@ int main(){
     hints.ai_flags = AI_PASSIVE;
 
     
-    Socket socket(std::string(PORT), &hints, &res);
-}
+    Socket socket(std::string(PORT), &hints);
+    
+    socket.bind();
+    socket.listen();
+
+}   
